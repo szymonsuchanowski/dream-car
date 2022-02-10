@@ -1,13 +1,15 @@
 import React from 'react';
 import Welcome from '../components/Welcome';
-import Step1 from '../components/Step1/Step1';
-import Success from '../components/Success/Success';
+import { Step1, Step2, Step3 } from '../components/Steps';
+import Success from '../components/Success';
 
 function useContent(step) {
     const ComponentsNames = {
         0: Welcome,
         1: Step1,
-        2: Success,
+        2: Step2,
+        3: Step3,
+        4: Success,
     };
 
     const setComponentName = () => ComponentsNames[step];

@@ -1,24 +1,41 @@
-const steps = [
+const stepsData = [
     {
         name: 'Welcome',
-        label: null,
+        subtitle: "dont't wait!",
+        actions: [{ txt: 'Start!', type: 'next' }],
     },
     {
         name: 'Step1',
-        label: 'Personal Info',
+        label: 'personal information',
+        subtitle: 'your data',
+        actions: [
+            { txt: 'back', type: 'prev' },
+            { txt: 'next', type: 'next' },
+        ],
     },
     {
         name: 'Step2',
-        label: 'Date Info',
+        label: 'date & time',
+        subtitle: 'rental information',
+        actions: [
+            { txt: 'back', type: 'prev' },
+            { txt: 'next', type: 'next' },
+        ],
     },
     {
         name: 'Step3',
-        label: 'Car Info',
+        label: 'car info',
+        subtitle: 'car & equipment',
+        actions: [
+            { txt: 'back', type: 'prev' },
+            { txt: 'submit', type: 'next' },
+        ],
     },
     {
         name: 'Success',
-        label: null,
+        label: 'success!',
+        subtitle: 'rental summary',
     },
 ];
 
-export default steps;
+export default stepsData;
