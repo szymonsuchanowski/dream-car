@@ -6,7 +6,7 @@ const stepsData = [
     },
     {
         name: 'Step1',
-        label: 'personal information',
+        label: 'personal info',
         subtitle: 'your data',
         actions: [
             { txt: 'back', type: 'prev' },
@@ -15,7 +15,7 @@ const stepsData = [
     },
     {
         name: 'Step2',
-        label: 'date & time',
+        label: 'rental info',
         subtitle: 'rental information',
         actions: [
             { txt: 'back', type: 'prev' },

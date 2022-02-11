@@ -22,7 +22,7 @@ const Survey = () => {
             <Subtitle step={step} />
             <Content step={step} />
             <Actions step={step} handleStepChange={handleStepChange} />
-            <ProgressBar progress={step} />
+            <ProgressBar step={step} />
         </StyledSurvey>
     );
 };
