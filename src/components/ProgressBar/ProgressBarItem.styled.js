@@ -9,7 +9,7 @@ const StyledProgressBarItem = styled.li`
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: ${(props) => (props.isActive ? 'scale(1.05)' : null)};
+    transform: ${(props) => (props.isActive ? 'scale(1.5)' : null)};
     transition: transform 0.4s linear;
 
     :after {
