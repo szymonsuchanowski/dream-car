@@ -4,7 +4,7 @@ import ProgressBarItem from './ProgressBarItem';
 import stepsData from '../../data/stepsData';
 
 const ProgressBar = ({ step }) => {
-    const progress = (100 / 3) * (step - 1);
+    const progress = (100 / (stepsData.length - 2)) * (step - 1);
 
     const renderProgressItem = () =>
         stepsData.map((stepData, index) => {
@@ -17,8 +17,8 @@ const ProgressBar = ({ step }) => {
         });
 
     return (
-        <StyledProgressBar progress={progress} step={step}>
-            {renderProgressItem()}
+        <StyledProgressBar progress={progress} counter={step}>
+            <ul>{renderProgressItem()}</ul>
         </StyledProgressBar>
     );
 };

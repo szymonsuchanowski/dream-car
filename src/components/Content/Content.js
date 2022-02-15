@@ -1,10 +1,25 @@
 import React from 'react';
-import useContent from '../../hooks/useContent';
+import StyledContent from './Content.styled';
+import ContentTitle from './ContentTitle';
+import ContentActions from './ContentActions';
+import useSurvey from '../../hooks/useSurvey';
 
-const Content = ({ step }) => {
-    const ContentStep = useContent(step);
+const Content = ({ step, handleStepChange }) => {
+    const ContentStep = useSurvey(step);
 
-    return <ContentStep />;
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(e);
+        handleStepChange('next');
+    };
+
+    return (
+        <StyledContent noValidate onSubmit={(e) => handleSubmit(e)}>
+            <ContentTitle step={step} />
+            <ContentStep />
+            <ContentActions step={step} handleStepChange={handleStepChange} />
+        </StyledContent>
+    );
 };
 
 export default Content;

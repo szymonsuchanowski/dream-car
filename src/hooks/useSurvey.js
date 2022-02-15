@@ -3,7 +3,7 @@ import Welcome from '../components/Welcome';
 import { Step1, Step2, Step3 } from '../components/Steps';
 import Success from '../components/Success';
 
-function useContent(step) {
+function useSurvey(step) {
     const ComponentsNames = {
         0: Welcome,
         1: Step1,
@@ -22,4 +22,4 @@ function useContent(step) {
     return getComponent;
 }
 
-export default useContent;
+export default useSurvey;

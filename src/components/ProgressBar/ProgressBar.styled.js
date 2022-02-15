@@ -1,36 +1,38 @@
 import styled, { css } from 'styled-components';
 
-const StyledProgressBar = styled.ul`
-    position: relative;
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    width: 90%;
-    margin: 10px auto 0;
+const StyledProgressBar = styled.footer`
+    ul {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        margin: 10px auto 0;
+        position: relative;
+        width: 90%;
 
-    ::before {
-        content: '';
-        width: 100%;
-        height: 2px;
-        background: lightblue;
-        position: absolute;
-        z-index: -1;
-        top: 50%;
-    }
+        ::before {
+            background: lightblue;
+            content: '';
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            z-index: -1;
+        }
 
-    ::after {
-        content: '';
-        width: ${(props) => props.progress}%;
-        height: 2px;
-        background: blue;
-        position: absolute;
-        z-index: -1;
-        top: 50%;
-        transition: width 0.4s linear;
+        ::after {
+            background: blue;
+            content: '';
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            transition: width 0.4s linear;
+            width: ${(props) => props.progress}%;
+            z-index: -1;
+        }
     }
 
     ${(props) =>
-        props.step === 0 &&
+        props.counter === 0 &&
         css`
             visibility: hidden;
         `}

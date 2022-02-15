@@ -1,13 +1,13 @@
 const stepsData = [
     {
         name: 'Welcome',
-        subtitle: "dont't wait!",
+        title: "dont't wait!",
         actions: [{ txt: 'Start!', type: 'next' }],
     },
     {
         name: 'Step1',
         label: 'personal info',
-        subtitle: 'your data',
+        title: 'your data',
         actions: [
             { txt: 'back', type: 'prev' },
             { txt: 'next', type: 'next' },
@@ -16,7 +16,7 @@ const stepsData = [
     {
         name: 'Step2',
         label: 'rental info',
-        subtitle: 'rental information',
+        title: 'rental information',
         actions: [
             { txt: 'back', type: 'prev' },
             { txt: 'next', type: 'next' },
@@ -25,16 +25,16 @@ const stepsData = [
     {
         name: 'Step3',
         label: 'car info',
-        subtitle: 'car & equipment',
+        title: 'car & equipment',
         actions: [
             { txt: 'back', type: 'prev' },
-            { txt: 'submit', type: 'next' },
+            { txt: 'submit!', type: 'submit' },
         ],
     },
     {
         name: 'Success',
         label: 'success!',
-        subtitle: 'rental summary',
+        title: 'rental summary',
     },
 ];
 

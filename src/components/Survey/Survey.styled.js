@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledSurvey = styled.div`
+const StyledSurvey = styled.section`
     display: flex;
     flex-direction: column;
     width: 100%;

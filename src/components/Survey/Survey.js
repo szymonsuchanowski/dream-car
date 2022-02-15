@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import StyledSurvey from './Survey.styled';
 import Title from '../Title';
-import Subtitle from '../Subtitle';
 import Content from '../Content';
-import Actions from '../Actions';
 import ProgressBar from '../ProgressBar';
 
 const Survey = () => {
@@ -19,9 +17,7 @@ const Survey = () => {
     return (
         <StyledSurvey>
             <Title>rent a car</Title>
-            <Subtitle step={step} />
-            <Content step={step} />
-            <Actions step={step} handleStepChange={handleStepChange} />
+            <Content step={step} handleStepChange={handleStepChange} />
             <ProgressBar step={step} />
         </StyledSurvey>
     );
