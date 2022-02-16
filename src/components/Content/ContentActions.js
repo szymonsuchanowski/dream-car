@@ -9,7 +9,7 @@ const ContentActions = ({ step, handleStepChange }) => {
             type === 'submit' ? (
                 <input key={txt} type={type} value={txt} />
             ) : (
-                <Button key={txt} handleStepChange={handleStepChange} actionType={type}>
+                <Button key={txt} handleStepChange={handleStepChange} actionType={type} step={step}>
                     {txt}
                 </Button>
             ),

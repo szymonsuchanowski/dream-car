@@ -8,7 +8,7 @@ import formContext from '../../context/formContext';
 
 const Survey = () => {
     const [step, setStep] = useState(0);
-    const { formState, errors, handleChange, validateInput } = useForm();
+    const { formState, errors, handleChange, validateInput, validateStepData } = useForm();
 
     const { Provider } = formContext;
 
@@ -18,8 +18,16 @@ const Survey = () => {
 
     const showPrevStep = () => setStep(step - 1);
 
-    const handleStepChange = (direction) =>
+    const showFollowingStep = (direction) =>
         direction === 'next' ? showNextStep() : showPrevStep();
+
+    const handleStepChange = (direction, stepNumber) => {
+        if (stepNumber === 0 || direction === 'prev') {
+            return showFollowingStep(direction);
+        }
+        const isStepDataValid = validateStepData(stepNumber);
+        return isStepDataValid ? showFollowingStep(direction) : null;
+    };
 
     return (
         <StyledSurvey>

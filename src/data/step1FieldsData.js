@@ -1,4 +1,4 @@
-const formFields = [
+const formFieldsStep1 = [
     {
         name: 'name',
         label: 'name*',
@@ -21,4 +21,4 @@ const formFields = [
     },
 ];
 
-export default formFields;
+export default formFieldsStep1;

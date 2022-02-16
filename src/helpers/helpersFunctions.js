@@ -22,6 +22,6 @@ export const createStateData = () =>
 
 export const createInitStateObj = () => convertArrToObj(createStateData());
 
-export const getInputsNames = () => formFields.map((field) => field.name);
+export const getInputsNames = (fields) => fields.map((field) => field.name);
 
 export const isObjectEmpty = (obj) => Object.keys(obj).length === 0;
