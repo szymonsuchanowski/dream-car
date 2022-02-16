@@ -15,7 +15,7 @@ const formFields = [
         type: 'text',
     },
     {
-        name: 'tel',
+        name: 'phone',
         label: 'phone number*',
         type: 'tel',
     },

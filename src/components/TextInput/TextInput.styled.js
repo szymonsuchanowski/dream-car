@@ -28,6 +28,7 @@ const StyledTextInput = styled.div`
         color: #111;
         font-weight: 300;
         transition: transform 0.5s linear, font-size 0.5s linear;
+        pointer-events: none;
     }
     input:focus ~ label,
     input:valid ~ label {
