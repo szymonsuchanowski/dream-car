@@ -8,8 +8,17 @@ import formContext from '../../context/formContext';
 
 const Survey = () => {
     const [step, setStep] = useState(0);
-    const { formState, errors, handleChange, validateInput, validateStepData } = useForm();
-
+    const {
+        formState,
+        errors,
+        handleChange,
+        handleDropdownChange,
+        handleCheckboxChange,
+        validateFieldOnBlur,
+        validateStepData,
+        dateErr,
+        removeFieldError,
+    } = useForm();
     const { Provider } = formContext;
 
     console.log(formState);
@@ -29,13 +38,34 @@ const Survey = () => {
         return isStepDataValid ? showFollowingStep(direction) : null;
     };
 
+    const handleSubmit = (e, stepNumber) => {
+        e.preventDefault();
+        const isStepDataValid = validateStepData(stepNumber);
+        return isStepDataValid ? showFollowingStep('next') : null;
+    };
+
     return (
         <StyledSurvey>
-            <Provider value={{ formState, handleChange, errors, validateInput }}>
-                <Title>rent a car</Title>
-                <Content step={step} handleStepChange={handleStepChange} />
-                <ProgressBar step={step} />
+            <Title>rent a car</Title>
+            <Provider
+                value={{
+                    formState,
+                    handleChange,
+                    handleDropdownChange,
+                    handleCheckboxChange,
+                    errors,
+                    validateFieldOnBlur,
+                    dateErr,
+                    removeFieldError,
+                }}
+            >
+                <Content
+                    step={step}
+                    handleStepChange={handleStepChange}
+                    handleSubmit={handleSubmit}
+                />
             </Provider>
+            <ProgressBar step={step} />
         </StyledSurvey>
     );
 };

@@ -1,20 +1,18 @@
 import React, { useContext } from 'react';
-import StyledTextInput from './TextInput.styled';
+import StyledDateInput from './DateInput.styled';
 import formContext from '../../context/formContext';
+import { setDateRange, isDateDisabled } from '../../helpers/helpersFunctions';
 
-const TextInput = (props) => {
+const DateInput = (props) => {
     const formHandler = useContext(formContext);
 
     const renderField = () => {
         const {
             field: { name, label, type },
         } = props;
-        console.log(formHandler.formState[name].isValid);
-        console.log(formHandler.formState[name].isFill);
-        console.log(formHandler.errors);
-        console.log(formHandler.formState);
         return (
             <>
+                <label htmlFor={name}>{label}</label>
                 <input
                     type={type}
                     name={name}
@@ -22,10 +20,11 @@ const TextInput = (props) => {
                     onChange={formHandler.handleChange}
                     onBlur={formHandler.validateFieldOnBlur}
                     value={formHandler.formState[name].value}
-                    required
+                    min={setDateRange(type)}
+                    disabled={isDateDisabled(name, formHandler.formState)}
                 />
-                <label htmlFor={name}>{label}</label>
                 {formHandler.errors[name] && <p>{formHandler.errors[name]}</p>}
+                {formHandler.dateErr && <p>date err</p>}
             </>
         );
     };
@@ -45,10 +44,10 @@ const TextInput = (props) => {
     };
 
     return (
-        <StyledTextInput isValid={isValid()} isFill={isFill()}>
+        <StyledDateInput isValid={isValid()} isFill={isFill()}>
             {renderField()}
-        </StyledTextInput>
+        </StyledDateInput>
     );
 };
 
-export default TextInput;
+export default DateInput;

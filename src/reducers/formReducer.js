@@ -3,6 +3,7 @@ import { createInitStateObj } from '../helpers/helpersFunctions';
 
 const formReducer = (state, action) => {
     const { type } = action;
+
     switch (type) {
         case FORM_ACTIONS.CHANGE_VALUE: {
             const {
@@ -16,6 +17,7 @@ const formReducer = (state, action) => {
                 },
             };
         }
+
         case FORM_ACTIONS.SET_INVALID: {
             const {
                 payload: { name },
@@ -29,6 +31,7 @@ const formReducer = (state, action) => {
                 },
             };
         }
+
         case FORM_ACTIONS.SET_VALID: {
             const {
                 payload: { name },
@@ -42,8 +45,10 @@ const formReducer = (state, action) => {
                 },
             };
         }
+
         case FORM_ACTIONS.RESET_FORM:
             return createInitStateObj();
+
         default:
             return state;
     }

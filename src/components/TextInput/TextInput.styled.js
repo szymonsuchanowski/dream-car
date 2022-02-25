@@ -4,10 +4,8 @@ const StyledTextInput = styled.div`
     position: relative;
     width: 100%;
     height: 46px;
+    margin-bottom: 3rem;
     input {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         border: 1px solid #111;
         background: transparent;

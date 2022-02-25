@@ -6,7 +6,7 @@ import Welcome from '../Welcome';
 import { Step1, Step2, Step3 } from '../Steps';
 import Success from '../Success';
 
-const Content = ({ step, handleStepChange }) => {
+const Content = ({ step, handleStepChange, handleSubmit }) => {
     const ContentComponents = {
         0: <Welcome />,
         1: <Step1 />,
@@ -17,14 +17,8 @@ const Content = ({ step, handleStepChange }) => {
 
     const renderContentStep = () => ContentComponents[step];
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(e);
-        handleStepChange('next');
-    };
-
     return (
-        <StyledContent noValidate onSubmit={(e) => handleSubmit(e)}>
+        <StyledContent noValidate onSubmit={(e) => handleSubmit(e, step)}>
             <ContentTitle step={step} />
             {renderContentStep()}
             <ContentActions step={step} handleStepChange={handleStepChange} />
