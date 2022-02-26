@@ -52,3 +52,53 @@ export const isDateDisabled = (name, formState) => {
 export const countTime = (date, time) => new Date(`${date} ${time}`).getTime();
 
 export const countHoursDifference = (time1, time2) => (time2 - time1) / (60 * 60 * 1000);
+
+const setItemData = (labelContent, valueContent) => ({
+    label: labelContent,
+    value: valueContent,
+});
+
+const prepareDateInfoToShow = (date, time, type) => {
+    const formattedDate = date.split('-').reverse().join('.');
+    return setItemData(`${type} time`, `${formattedDate}, ${time}`);
+};
+
+export const prepareSummaryItemsList = (itemsData) => {
+    const {
+        days,
+        startDate,
+        startTime,
+        endDate,
+        endTime,
+        carClass,
+        price,
+        deposit,
+        seatNum,
+        seatPrice,
+        gpsInfo,
+        carWashInfo,
+        totalPrice,
+    } = itemsData;
+    const startItem = prepareDateInfoToShow(startDate, startTime, 'start');
+    const endItem = prepareDateInfoToShow(endDate, endTime, 'end');
+    const carItem = setItemData('car class', `${carClass}`);
+    const rentalItem = setItemData(`rental (${days} x ${price} PLN)`, `${days * price} PLN`);
+    const childSeatItem = seatNum
+        ? setItemData(`child seat (x${seatNum})`, `${seatPrice} PLN`)
+        : null;
+    const gpsItem = gpsInfo ? setItemData('gps navigation', `${gpsInfo} PLN`) : null;
+    const carWashItem = carWashInfo ? setItemData('car wash', `${carWashInfo} PLN`) : null;
+    const totalPriceItem = setItemData('total price', `${totalPrice} PLN`);
+    const depositItem = setItemData('deposit', `${deposit} PLN`);
+    return [
+        startItem,
+        endItem,
+        carItem,
+        rentalItem,
+        childSeatItem,
+        gpsItem,
+        carWashItem,
+        totalPriceItem,
+        depositItem,
+    ].filter((item) => item);
+};

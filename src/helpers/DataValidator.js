@@ -1,5 +1,5 @@
 import { countTime, countHoursDifference } from './helpersFunctions';
-import minRentalLength from '../data/rentalData';
+import rentalData from '../data/rentalData';
 
 export default class DataValidator {
     constructor() {
@@ -77,11 +77,15 @@ export default class DataValidator {
     }
 
     checkDateErrors(startDateValue, endDateValue, startTimeValue, endTimeValue) {
+        const { minRentalLengthHours } = rentalData;
         const startTime = countTime(startDateValue, startTimeValue);
         const endTime = countTime(endDateValue, endTimeValue);
         const startHoursDifference = countHoursDifference(this.currentTime, startTime);
         const startEndHoursDifference = countHoursDifference(startTime, endTime);
-        return startHoursDifference > minRentalLength && startEndHoursDifference > minRentalLength;
+        return (
+            startHoursDifference > minRentalLengthHours &&
+            startEndHoursDifference > minRentalLengthHours
+        );
     }
 
     isMatchRegex(inputName, inputValue) {
