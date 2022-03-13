@@ -9,7 +9,7 @@ const Success = () => {
         items.map((item) => {
             const { label, value } = item;
             return (
-                <li key={value}>
+                <li key={label}>
                     <span>{label}</span>
                     <span>{value}</span>
                 </li>

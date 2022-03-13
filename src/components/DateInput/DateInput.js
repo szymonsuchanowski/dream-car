@@ -24,7 +24,6 @@ const DateInput = (props) => {
                     disabled={isDateDisabled(name, formHandler.formState)}
                 />
                 {formHandler.errors[name] && <p>{formHandler.errors[name]}</p>}
-                {formHandler.dateErr && <p>date err</p>}
             </>
         );
     };

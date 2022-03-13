@@ -9,6 +9,11 @@ const ResetStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
     }
+
+    body {
+        background: #eef0f5;
+        color: #204566;
+    }
 `;
 
 export default ResetStyle;

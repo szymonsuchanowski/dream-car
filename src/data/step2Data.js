@@ -1,22 +1,22 @@
 const formFieldsStep2 = [
     {
         name: 'startDate',
-        label: 'start date*',
+        label: 'start date',
         type: 'date',
     },
     {
         name: 'startTime',
-        label: 'start time*',
+        label: 'start time',
         type: 'time',
     },
     {
         name: 'endDate',
-        label: 'end date*',
+        label: 'end date',
         type: 'date',
     },
     {
         name: 'endTime',
-        label: 'end time*',
+        label: 'end time',
         type: 'time',
     },
 ];

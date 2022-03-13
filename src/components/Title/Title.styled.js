@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 const StyledTitle = styled.header`
-    width: 80%;
-    margin: 0 auto;
     text-align: center;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     h1 {
         margin: 0;

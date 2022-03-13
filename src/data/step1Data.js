@@ -1,22 +1,22 @@
 const formFieldsStep1 = [
     {
         name: 'name',
-        label: 'name*',
+        label: 'name',
         type: 'text',
     },
     {
         name: 'lastName',
-        label: 'last name*',
+        label: 'last name',
         type: 'text',
     },
     {
         name: 'email',
-        label: 'e-mail*',
+        label: 'e-mail',
         type: 'text',
     },
     {
         name: 'phone',
-        label: 'phone number*',
+        label: 'phone number',
         type: 'tel',
     },
 ];

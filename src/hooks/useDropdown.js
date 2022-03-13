@@ -5,12 +5,7 @@ function useDropdown() {
 
     const toggleDropdown = () => setOpen(!open);
 
-    const handleDropdownChoose = (name, value) => {
-        toggleDropdown();
-        console.log(name, value);
-    };
-
-    return { open, toggleDropdown, handleDropdownChoose };
+    return { open, toggleDropdown };
 }
 
 export default useDropdown;

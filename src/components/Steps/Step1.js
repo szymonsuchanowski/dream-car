@@ -5,12 +5,7 @@ import fields from '../../data/step1Data';
 const Step1 = () => {
     const renderFields = () => fields.map((field) => <TextInput key={field.name} field={field} />);
 
-    return (
-        <div>
-            {renderFields()}
-            <p>* required field</p>
-        </div>
-    );
+    return <div>{renderFields()}</div>;
 };
 
 export default Step1;

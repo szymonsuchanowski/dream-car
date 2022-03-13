@@ -21,8 +21,6 @@ const Survey = () => {
     } = useForm();
     const { Provider } = formContext;
 
-    console.log(formState);
-
     const showNextStep = () => setStep(step + 1);
 
     const showPrevStep = () => setStep(step - 1);
