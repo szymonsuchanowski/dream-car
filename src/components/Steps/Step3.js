@@ -1,6 +1,7 @@
 import React from 'react';
 import Dropdown from '../Dropdown';
 import Switch from '../Switch';
+import Error from '../Error';
 import fields from '../../data/step3Data';
 
 const Step3 = () => {
@@ -13,7 +14,12 @@ const Step3 = () => {
             ),
         );
 
-    return <div>{renderFields()}</div>;
+    return (
+        <div>
+            {renderFields()}
+            <Error />
+        </div>
+    );
 };
 
 export default Step3;
