@@ -11,8 +11,8 @@ const ResetStyle = createGlobalStyle`
     }
 
     body {
-        background: #eef0f5;
-        color: #204566;
+        background: #E4EBF5;
+        color: #6d5dfc;
     }
 `;
 

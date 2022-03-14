@@ -1,33 +1,45 @@
 import styled from 'styled-components';
 
 const StyledDateInput = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+    :not(:first-child) {
+        margin-top: 1.5rem;
+    }
     font-size: 16px;
-    font-weight: 300;
-    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.4),
-        inset -1px -1px 1px rgba(12, 13, 18, 0.04), inset 0 0 0 2px rgba(238, 240, 245, 1),
-        inset -2px -2px 2px 2px rgba(255, 255, 255, 0.4),
-        inset -4px -4px 4px 2px rgba(255, 255, 255, 0.4), -1px -1px 4px 0px rgba(255, 255, 255, 0.4),
-        -2px -2px 8px 0px rgba(255, 255, 255, 0.4), inset 2px 2px 2px 2px rgba(12, 13, 18, 0.04),
-        inset 4px 4px 4px 2px rgba(12, 13, 18, 0.04), 1px 1px 4px 0px rgba(12, 13, 18, 0.04),
-        2px 2px 8px 0px rgba(12, 13, 18, 0.04);
-    padding: 10px;
-    align-items: center;
-    border-radius: 12px;
-    border: none;
-    background: transparent;
-    margin-bottom: 2.5rem;
+    font-weight: 400;
+    position: relative;
     label {
-        display: block;
-        width: 50%;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        padding: 10px;
+        transition: transform 0.5s linear, font-size 0.5s linear;
     }
     input {
-        width: 50%;
+        text-align: right;
+        box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7, inset -0.2rem -0.2rem 0.5rem #ffffff;
+        padding: 10px;
+        width: 100%;
         border: none;
         background: transparent;
         outline: 1px solid transparent;
+        border-radius: 8px;
+        height: 40px;
+        :focus,
+        :valid {
+            box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
+        }
+        :focus ~ label,
+        :valid ~ label {
+            transform: translateY(-32px);
+        }
+    }
+    input[type='time']::-webkit-calendar-picker-indicator,
+    input[type='date']::-webkit-calendar-picker-indicator {
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        width: 100%;
+        cursor: pointer;
     }
 `;
 

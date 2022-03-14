@@ -1,7 +1,7 @@
 const formFieldsStep3 = [
     {
         name: 'car',
-        label: 'car class*',
+        label: 'car class',
         type: 'dropdown',
         items: [
             { value: 'A', label: 'A (e.g. Fiat 500)' },
@@ -16,21 +16,21 @@ const formFieldsStep3 = [
         label: 'child seat',
         type: 'dropdown',
         items: [
-            { value: 0, label: 'none' },
-            { value: 1, label: 'one' },
-            { value: 2, label: 'two' },
-            { value: 3, label: 'three' },
-            { value: 4, label: 'four' },
+            { value: 0, label: 'none (0)' },
+            { value: 1, label: 'one (1)' },
+            { value: 2, label: 'two (2)' },
+            { value: 3, label: 'three (3)' },
+            { value: 4, label: 'four (4)' },
         ],
     },
     {
         name: 'gps',
-        label: 'GPS navigation',
+        label: 'GPS',
         type: 'checkbox',
     },
     {
         name: 'carWash',
-        label: 'car cleaning',
+        label: 'car wash',
         type: 'checkbox',
     },
 ];

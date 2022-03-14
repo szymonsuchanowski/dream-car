@@ -6,7 +6,7 @@ const ProgressBarItem = ({ children, txt, step, num }) => {
     const isActive = num === step;
 
     return (
-        <StyledProgressBarItem isActive={isActive} txt={txt}>
+        <StyledProgressBarItem isActive={isActive} isComplete={isComplete} txt={txt}>
             {isComplete ? '\u2713' : children}
         </StyledProgressBarItem>
     );

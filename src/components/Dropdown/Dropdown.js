@@ -4,6 +4,7 @@ import DropdownLabel from './DropdownLabel';
 import DropdownBox from './DropdownBox';
 import DropdownHeader from './DropdownHeader';
 import DropdownList from './DropdownList';
+import Error from '../Error';
 import useDropdown from '../../hooks/useDropdown';
 import formContext from '../../context/formContext';
 
@@ -18,20 +19,27 @@ const Dropdown = ({ field: { name, label, items } }) => {
         if (selectedValue !== '') {
             return selectedValue;
         }
-        return open ? 'choose from list' : 'click to choose';
+        return open ? 'select below' : 'click to choose';
     };
 
     return (
-        <StyledDropdown>
-            <DropdownLabel>{label}</DropdownLabel>
-            <DropdownBox>
-                <DropdownHeader toggleDropdown={toggleDropdown}>
-                    {setDropdownHeader()}
-                </DropdownHeader>
-                {open && <DropdownList name={name} items={items} toggleDropdown={toggleDropdown} />}
-                {formHandler.errors[name] && <p>{formHandler.errors[name]}</p>}
-            </DropdownBox>
-        </StyledDropdown>
+        <>
+            <StyledDropdown isOpen={open} isSelected={selectedValue !== ''}>
+                <DropdownLabel>{label}</DropdownLabel>
+                <DropdownBox>
+                    <DropdownHeader toggleDropdown={toggleDropdown} isOpen={open}>
+                        {setDropdownHeader()}
+                    </DropdownHeader>
+                    <DropdownList
+                        name={name}
+                        items={items}
+                        toggleDropdown={toggleDropdown}
+                        isOpen={open}
+                    />
+                </DropdownBox>
+            </StyledDropdown>
+            <Error>{formHandler.errors[name]}</Error>
+        </>
     );
 };
 

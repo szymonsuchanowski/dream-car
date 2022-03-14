@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 const StyledContent = styled.form`
     width: 90%;
-    height: 65vh;
+    min-height: 70vh;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border-radius: 30px;
-    box-shadow: 5px 5px 10px #a7a8ac, -5px -5px 10px #ffffff;
+    border-radius: 16px;
+    box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
     > div {
         display: flex;
         flex-direction: column;

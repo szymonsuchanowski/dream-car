@@ -1,23 +1,20 @@
 import styled from 'styled-components';
 
 const StyledDropdown = styled.div`
+    position: relative;
+    height: 40px;
     display: flex;
     width: 100%;
-    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.4),
-        inset -1px -1px 1px rgba(12, 13, 18, 0.04), inset 0 0 0 2px rgba(238, 240, 245, 1),
-        inset -2px -2px 2px 2px rgba(255, 255, 255, 0.4),
-        inset -4px -4px 4px 2px rgba(255, 255, 255, 0.4), -1px -1px 4px 0px rgba(255, 255, 255, 0.4),
-        -2px -2px 8px 0px rgba(255, 255, 255, 0.4), inset 2px 2px 2px 2px rgba(12, 13, 18, 0.04),
-        inset 4px 4px 4px 2px rgba(12, 13, 18, 0.04), 1px 1px 4px 0px rgba(12, 13, 18, 0.04),
-        2px 2px 8px 0px rgba(12, 13, 18, 0.04);
-    padding: 10px;
     align-items: center;
-    border-radius: 12px;
-    border: none;
-    background: transparent;
-    margin-bottom: 2.5rem;
-    > div {
-        width: 70%;
+    justify-content: space-between;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: ${({ isOpen, isSelected }) =>
+        isOpen || isSelected
+            ? '0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff'
+            : 'inset 0.2rem 0.2rem 0.5rem #c8d0e7, inset -0.2rem -0.2rem 0.5rem #ffffff'};
+    :not(:first-child) {
+        margin-top: 1.5rem;
     }
 `;
 

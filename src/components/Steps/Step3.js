@@ -13,12 +13,7 @@ const Step3 = () => {
             ),
         );
 
-    return (
-        <div>
-            {renderFields()}
-            <p>* required field</p>
-        </div>
-    );
+    return <div>{renderFields()}</div>;
 };
 
 export default Step3;

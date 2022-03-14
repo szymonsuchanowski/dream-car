@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
-const StyledButton = styled.button`
+const StyledSubmitButton = styled.input`
     cursor: pointer;
-    padding: 0.75rem 0;
     letter-spacing: 0.1rem;
     border: none;
     border-radius: 8px;
@@ -10,4 +9,4 @@ const StyledButton = styled.button`
     background: #e4ebf5;
 `;
 
-export default StyledButton;
+export default StyledSubmitButton;

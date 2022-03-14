@@ -38,7 +38,7 @@ const getCurrentDate = () => {
 
 export const setDateRange = (type) => (type === 'date' ? getCurrentDate() : null);
 
-export const isDateDisabled = (name, formState) => {
+export const isDateFieldDisabled = (name, formState) => {
     if (name === 'endTime' || name === 'endDate') {
         const {
             startDate: { isValid: isStartDateValid },
@@ -46,7 +46,7 @@ export const isDateDisabled = (name, formState) => {
         } = formState;
         return !(isStartDateValid && isStartTimeValid);
     }
-    return null;
+    return false;
 };
 
 export const countTime = (date, time) => new Date(`${date} ${time}`).getTime();

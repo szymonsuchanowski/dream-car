@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import StyledSwitch from './Switch.styled';
+import Error from '../Error';
 import formContext from '../../context/formContext';
 import useSwitch from '../../hooks/useSwitch';
 
@@ -16,21 +17,24 @@ const Switch = ({ field: { name, label, type } }) => {
     };
 
     return (
-        <StyledSwitch isOn={isOn}>
-            <p>{label}</p>
-            <div>
-                <input
-                    id={name}
-                    type={type}
-                    name={name}
-                    checked={isOn}
-                    onChange={() => handleChange()}
-                />
-                <label htmlFor={name}>
-                    <span />
-                </label>
-            </div>
-        </StyledSwitch>
+        <>
+            <StyledSwitch isOn={isOn}>
+                <p>{label}</p>
+                <div>
+                    <input
+                        id={name}
+                        type={type}
+                        name={name}
+                        checked={isOn}
+                        onChange={() => handleChange()}
+                    />
+                    <label htmlFor={name}>
+                        <span />
+                    </label>
+                </div>
+            </StyledSwitch>
+            <Error>{formHandler.errors[name]}</Error>
+        </>
     );
 };
 

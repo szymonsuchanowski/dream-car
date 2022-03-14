@@ -2,7 +2,7 @@ import React from 'react';
 import StyledDropdownList from './DropdownList.styled';
 import DropdownItem from './DropdownItem';
 
-const DropdownList = ({ name, items, toggleDropdown }) => {
+const DropdownList = ({ name, items, toggleDropdown, isOpen }) => {
     const renderDropdownItems = () =>
         items.map((item) => (
             <DropdownItem
@@ -13,7 +13,7 @@ const DropdownList = ({ name, items, toggleDropdown }) => {
             />
         ));
 
-    return <StyledDropdownList>{renderDropdownItems()}</StyledDropdownList>;
+    return <StyledDropdownList isOpen={isOpen}>{renderDropdownItems()}</StyledDropdownList>;
 };
 
 export default DropdownList;

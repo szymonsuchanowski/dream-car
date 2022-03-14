@@ -1,13 +1,14 @@
 import React from 'react';
 import StyledContentActions from './ContentActions.styled';
 import Button from '../Button';
+import SubmitButton from '../SubmitButton';
 import { getStepsData } from '../../helpers/helpersFunctions';
 
 const ContentActions = ({ step, handleStepChange }) => {
     const showBtns = (btnsData) =>
         btnsData.map(({ txt, type }) =>
             type === 'submit' ? (
-                <input key={txt} type={type} value={txt} />
+                <SubmitButton key={txt} value={txt} />
             ) : (
                 <Button key={txt} handleStepChange={handleStepChange} actionType={type} step={step}>
                     {txt}
