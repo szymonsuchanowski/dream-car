@@ -11,7 +11,7 @@ const Input = (props) => {
         field: { name, label, type },
     } = props;
 
-    const renderInfo = () => <p>fill start date and time</p>;
+    const renderInfo = () => <p>fill start date & time</p>;
 
     const renderField = () => (
         <>

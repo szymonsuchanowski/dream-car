@@ -30,7 +30,7 @@ const StyledProgressBarItem = styled.li`
         position: absolute;
         text-align: center;
         top: 45px;
-        transition: filter 1s linear;
+        transition: filter 0.4s linear;
     }
 `;
 

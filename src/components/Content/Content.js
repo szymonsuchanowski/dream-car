@@ -4,7 +4,7 @@ import ContentTitle from './ContentTitle';
 import ContentActions from './ContentActions';
 import Welcome from '../Welcome';
 import { Step1, Step2, Step3 } from '../Steps';
-import Success from '../Success';
+import Summary from '../Summary';
 
 const Content = ({ step, handleStepChange, handleSubmit }) => {
     const ContentComponents = {
@@ -12,7 +12,7 @@ const Content = ({ step, handleStepChange, handleSubmit }) => {
         1: <Step1 />,
         2: <Step2 />,
         3: <Step3 />,
-        4: <Success />,
+        4: <Summary />,
     };
 
     const renderContentStep = () => ContentComponents[step];

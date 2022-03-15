@@ -34,7 +34,7 @@ const stepsData = [
     {
         name: 'Success',
         label: 'summary',
-        title: 'rental summary',
+        title: 'inquiry summary',
     },
 ];
 

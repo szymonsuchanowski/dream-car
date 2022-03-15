@@ -85,6 +85,7 @@ const SummaryCreator = (dataToFilter) => {
             carWashInfo,
             totalPrice,
         });
+        console.log(summaryItemsList);
         return { name, email, summaryItemsList };
     };
 

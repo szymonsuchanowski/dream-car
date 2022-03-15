@@ -63,9 +63,9 @@ const StyledInput = styled.div`
         display: flex;
         font-size: 0.95rem;
         height: 40px;
-        justify-content: center;
+        justify-content: flex-start;
         letter-spacing: 1px;
-        text-align: center;
+        padding: 10px;
     }
 `;
 

@@ -60,7 +60,7 @@ const setItemData = (labelContent, valueContent) => ({
 
 const prepareDateInfoToShow = (date, time, type) => {
     const formattedDate = date.split('-').reverse().join('.');
-    return setItemData(`${type} time`, `${formattedDate}, ${time}`);
+    return setItemData(`${type}`, `${formattedDate}, ${time}`);
 };
 
 export const prepareSummaryItemsList = (itemsData) => {
@@ -82,11 +82,11 @@ export const prepareSummaryItemsList = (itemsData) => {
     const startItem = prepareDateInfoToShow(startDate, startTime, 'start');
     const endItem = prepareDateInfoToShow(endDate, endTime, 'end');
     const carItem = setItemData('car class', `${carClass}`);
-    const rentalItem = setItemData(`rental (${days} x ${price} PLN)`, `${days * price} PLN`);
+    const rentalItem = setItemData(`rental (${days} x ${price}PLN)`, `${days * price} PLN`);
     const childSeatItem = seatNum
         ? setItemData(`child seat (x${seatNum})`, `${seatPrice} PLN`)
         : null;
-    const gpsItem = gpsInfo ? setItemData('gps navigation', `${gpsInfo} PLN`) : null;
+    const gpsItem = gpsInfo ? setItemData('gps', `${gpsInfo} PLN`) : null;
     const carWashItem = carWashInfo ? setItemData('car wash', `${carWashInfo} PLN`) : null;
     const totalPriceItem = setItemData('total price', `${totalPrice} PLN`);
     const depositItem = setItemData('deposit', `${deposit} PLN`);
