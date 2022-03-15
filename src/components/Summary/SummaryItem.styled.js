@@ -9,11 +9,11 @@ const StyledSummaryItem = styled.li`
     padding: 0.5rem;
 
     span:first-child {
-        color: ${({ color }) => (color ? '#5b0eeb' : '#9baacf')};
+        color: ${({ isColor }) => (isColor ? '#5b0eeb' : '#9baacf')};
     }
 
     span:last-child {
-        color: ${({ color }) => (color ? '#5b0eeb' : '#5e5e5e')};
+        color: ${({ isColor }) => (isColor ? '#5b0eeb' : '#5e5e5e')};
         font-weight: 700;
     }
 `;

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import StyledSwitch from './Switch.styled';
 import Error from '../Error';
 import formContext from '../../context/formContext';
-import useSwitch from '../../hooks/useSwitch';
+import useToggle from '../../hooks/useToggle';
 
 const Switch = ({ field: { name, label, type } }) => {
     const formHandler = useContext(formContext);
@@ -11,7 +11,7 @@ const Switch = ({ field: { name, label, type } }) => {
         [name]: { value: isOnValue },
     } = formHandler.formState;
 
-    const { isOn, toggleSwitch } = useSwitch(isOnValue);
+    const [isOn, toggleSwitch] = useToggle(isOnValue);
 
     const handleChange = () => {
         formHandler.handleCheckboxChange(name, !isOn);

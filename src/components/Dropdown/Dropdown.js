@@ -4,11 +4,11 @@ import DropdownLabel from './DropdownLabel';
 import DropdownHeader from './DropdownHeader';
 import DropdownList from './DropdownList';
 import Error from '../Error';
-import useDropdown from '../../hooks/useDropdown';
+import useToggle from '../../hooks/useToggle';
 import formContext from '../../context/formContext';
 
 const Dropdown = ({ field: { name, label, items } }) => {
-    const { open, toggleDropdown } = useDropdown();
+    const [isOpen, toggleDropdown] = useToggle();
 
     const formHandler = useContext(formContext);
 
@@ -20,22 +20,22 @@ const Dropdown = ({ field: { name, label, items } }) => {
         if (selectedValue !== '') {
             return selectedValue;
         }
-        return open ? 'select below' : 'click to choose';
+        return isOpen ? 'select below' : 'click to choose';
     };
 
     return (
         <>
-            <StyledDropdown isOpen={open} isSelected={selectedValue !== ''}>
+            <StyledDropdown isOpen={isOpen} isSelected={selectedValue !== ''}>
                 <DropdownLabel>{label}</DropdownLabel>
                 <div>
-                    <DropdownHeader toggleDropdown={toggleDropdown} isOpen={open}>
+                    <DropdownHeader toggleDropdown={toggleDropdown} isOpen={isOpen}>
                         {setDropdownHeader()}
                     </DropdownHeader>
                     <DropdownList
                         name={name}
                         items={items}
                         toggleDropdown={toggleDropdown}
-                        isOpen={open}
+                        isOpen={isOpen}
                     />
                 </div>
             </StyledDropdown>

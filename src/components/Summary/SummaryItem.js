@@ -5,7 +5,7 @@ const SummaryItem = ({ item }) => {
     const { label, value } = item;
 
     return (
-        <StyledSummaryItem color={label === 'total price'}>
+        <StyledSummaryItem isColor={label === 'total price'}>
             <span>{label}</span>
             <span>{value}</span>
         </StyledSummaryItem>

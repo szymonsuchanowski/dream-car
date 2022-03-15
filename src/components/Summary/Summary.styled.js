@@ -15,10 +15,10 @@ const StyledSummary = styled.div`
     }
 
     ul {
-        list-style: none;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        list-style: none;
     }
 `;
 
