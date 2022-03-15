@@ -18,7 +18,7 @@ const StyledProgressBarItem = styled.li`
     height: 40px;
     justify-content: center;
     transform: ${({ isActive }) => (isActive ? 'scale(1.1)' : null)};
-    transition: transform 0.4s linear, box-shadow 0.4s linear;
+    transition: transform 0.3s ease-in-out;
     width: 40px;
 
     :after {
@@ -30,7 +30,7 @@ const StyledProgressBarItem = styled.li`
         position: absolute;
         text-align: center;
         top: 45px;
-        transition: filter 0.4s linear;
+        transition: filter 0.3s ease-in-out;
     }
 `;
 

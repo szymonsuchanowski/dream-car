@@ -31,7 +31,7 @@ const StyledDropdownHeader = styled.p`
         right: 2px;
         top: 50%;
         transform: translateY(-50%);
-        transition: transform 0.4s linear;
+        transition: transform 0.3s ease-in-out;
         width: 8px;
     }
 

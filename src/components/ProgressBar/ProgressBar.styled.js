@@ -5,7 +5,7 @@ const StyledProgressBar = styled.footer`
     max-width: 700px;
     opacity: 1;
     transform: translateX(0);
-    transition: opacity 0.4s linear;
+    transition: opacity 0.3s ease-in-out;
     width: 90%;
 
     ul {
@@ -32,7 +32,7 @@ const StyledProgressBar = styled.footer`
 
         ::after {
             background: #5b0eeb;
-            transition: width 0.4s linear;
+            transition: width 0.3s ease-in-out;
             width: ${({ progress }) => progress}%;
         }
     }

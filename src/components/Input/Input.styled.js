@@ -53,7 +53,7 @@ const StyledInput = styled.div`
         padding: 10px;
         position: absolute;
         top: 1px;
-        transition: transform 0.3s linear, font-size 0.3s linear;
+        transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
     }
 
     p {

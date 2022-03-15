@@ -19,10 +19,30 @@ const StyledDropdownList = styled.ul`
     position: absolute;
     top: 43px;
     transform: scaleY(0);
-    transition: opacity 0.4s linear, transform 0.4s linear, margin-top 0.4s linear;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, margin-top 0.3s ease-in-out;
     width: 100%;
     z-index: 1;
     ${({ isOpen }) => isOpen && openListStyles}
+
+    @media screen and (min-width: 400px) {
+        margin-top: -35%;
+        ${({ isOpen }) => isOpen && openListStyles}
+    }
+
+    @media screen and (min-width: 460px) {
+        margin-top: -30%;
+        ${({ isOpen }) => isOpen && openListStyles}
+    }
+
+    @media screen and (min-width: 550px) {
+        margin-top: -25%;
+        ${({ isOpen }) => isOpen && openListStyles}
+    }
+
+    @media screen and (min-width: 630px) {
+        margin-top: -20%;
+        ${({ isOpen }) => isOpen && openListStyles}
+    }
 `;
 
 export default StyledDropdownList;

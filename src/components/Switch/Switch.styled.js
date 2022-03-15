@@ -4,8 +4,6 @@ const bgColor = 'linear-gradient(330deg, #5b0eeb 0%, #6d5dfc 50%, #8abdff 100%)'
 
 const StyledSwitch = styled.div`
     align-items: center;
-    align-items: center;
-    background: transparent;
     border-radius: 12px;
     border: none;
     box-shadow: ${({ isOn }) =>
@@ -43,7 +41,7 @@ const StyledSwitch = styled.div`
         height: 24px;
         justify-content: space-between;
         position: relative;
-        transition: background-color 0.2s linear;
+        transition: background-color 0.3s ease-in-out;
         width: 50px;
     }
 
@@ -56,7 +54,7 @@ const StyledSwitch = styled.div`
         left: 4px;
         position: absolute;
         top: 3px;
-        transition: 0.2s;
+        transition: 0.2s ease-in-out;
         width: 18px;
     }
 

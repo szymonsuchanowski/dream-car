@@ -9,6 +9,14 @@ const StyledDropdownItem = styled.li`
     height: 40px;
     justify-content: flex-end;
     padding-right: 25px;
+    transition: color 0.3s ease-in-out;
+
+    @media screen and (min-width: 960px) {
+        :hover {
+            box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
+            color: #5b0eeb;
+        }
+    }
 `;
 
 export default StyledDropdownItem;
