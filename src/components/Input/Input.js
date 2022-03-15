@@ -1,14 +1,17 @@
 import React, { useContext } from 'react';
-import StyledDateInput from './DateInput.styled';
+import StyledInput from './Input.styled';
 import Error from '../Error';
 import formContext from '../../context/formContext';
-import { isDateFieldDisabled } from '../../helpers/helpersFunctions';
+import { isDateFieldDisabled, setDateRange } from '../../helpers/helpersFunctions';
 
-const DateInput = (props) => {
+const Input = (props) => {
     const formHandler = useContext(formContext);
+
     const {
         field: { name, label, type },
     } = props;
+
+    const renderInfo = () => <p>fill start date and time</p>;
 
     const renderField = () => (
         <>
@@ -20,24 +23,24 @@ const DateInput = (props) => {
                 onBlur={formHandler.validateFieldOnBlur}
                 value={formHandler.formState[name].value}
                 disabled={isDateFieldDisabled(name, formHandler.formState)}
+                min={setDateRange(type)}
+                autoComplete="off"
                 required
             />
             <label htmlFor={name}>{label}</label>
         </>
     );
 
-    const isValid = () => formHandler.formState[name].isValid;
-
-    const isFill = () => formHandler.formState[name].isFill;
-
     return (
         <>
-            <StyledDateInput isValid={isValid()} isFill={isFill()}>
-                {renderField()}
-            </StyledDateInput>
-            <Error>{formHandler.errors[name]}</Error>
+            <StyledInput>
+                {isDateFieldDisabled(name, formHandler.formState) ? renderInfo() : renderField()}
+            </StyledInput>
+            <Error>
+                {isDateFieldDisabled(name, formHandler.formState) ? null : formHandler.errors[name]}
+            </Error>
         </>
     );
 };
 
-export default DateInput;
+export default Input;

@@ -3,6 +3,7 @@ import StyledProgressBarItem from './ProgressBarItem.styled';
 
 const ProgressBarItem = ({ children, txt, step, num }) => {
     const isComplete = num < step;
+
     const isActive = num === step;
 
     return (

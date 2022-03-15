@@ -1,44 +1,48 @@
 import styled, { css } from 'styled-components';
 
-const activeArrowStyles = css`
+const crossStylesBefore = css`
     transform: translateX(5px) rotate(-45deg);
     width: 10px;
 `;
 
-const activeArrowStyles2 = css`
+const crossStylesAfter = css`
     transform: translateX(5px) rotate(45deg);
     width: 10px;
 `;
 
-const StyledDropdownHeader = styled.div`
-    width: 100%;
+const StyledDropdownHeader = styled.p`
+    align-items: center;
+    color: #5e5e5e;
     cursor: pointer;
     display: flex;
-    align-items: center;
     justify-content: flex-end;
-    text-align: center;
     padding-right: 15px;
     position: relative;
+    text-align: center;
+    width: 100%;
+
     ::before,
     ::after {
+        background-color: #5e5e5e;
         content: '';
+        display: inline-block;
+        height: 1.5px;
         position: absolute;
         right: 2px;
         top: 50%;
-        background-color: black;
-        width: 8px;
-        height: 1px;
         transform: translateY(-50%);
-        display: inline-block;
         transition: transform 0.4s linear;
+        width: 8px;
     }
+
     ::before {
         transform: rotate(45deg);
-        ${({ isOpen }) => isOpen && activeArrowStyles}
+        ${({ isOpen }) => isOpen && crossStylesBefore}
     }
+
     ::after {
         transform: translateX(5px) rotate(-45deg);
-        ${({ isOpen }) => isOpen && activeArrowStyles2}
+        ${({ isOpen }) => isOpen && crossStylesAfter}
     }
 `;
 

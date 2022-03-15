@@ -21,43 +21,43 @@ export default class DataValidator {
 
     email = {
         regExp: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-        err: 'valid e-mail address required',
+        err: 'e-mail address required',
         required: true,
     };
 
     phone = {
         regExp: /^((00)?)[1-9]{1}\d{7,13}$/,
-        err: 'digits (e.g. 606606606, 0048606606606)',
+        err: 'required - only digits',
         required: true,
     };
 
     startDate = {
         regExp: /^20\d{2}[-/.](0[1-9]|1[0-2])[-/.](0[1-9]|[12]\d|3[01])$/,
-        err: 'today/future (dd.mm.yyyy)',
+        err: 'today or future',
         required: true,
     };
 
     startTime = {
         regExp: /^((0[8-9]|1[0-9]):[0-5][0-9])$|^(20:00)$/,
-        err: 'required (08:00 - 20:00)',
+        err: 'work hours 08:00 - 20:00',
         required: true,
     };
 
     endDate = {
         regExp: /^2022[-/.](0[1-9]|1[0-2])[-/.](0[1-9]|[12]\d|3[01])$/,
-        err: 'required (dd.mm.yyyy)',
+        err: 'today or future',
         required: true,
     };
 
     endTime = {
         regExp: /^((0[8-9]|1[0-9]):[0-5][0-9])$|^(20:00)$/,
-        err: 'required (08:00 - 20:00)',
+        err: 'work hours 08:00 - 20:00',
         required: true,
     };
 
     car = {
         regExp: /^[a-zA-Z]$/,
-        err: 'choose car class',
+        err: 'select car class',
         required: true,
     };
 
@@ -77,13 +77,13 @@ export default class DataValidator {
     }
 
     checkDateErrors(startDateValue, endDateValue, startTimeValue, endTimeValue) {
-        const { minRentalLengthHours } = rentalData;
+        const { minRentalLengthHours, minStartDifferenceHours } = rentalData;
         const startTime = countTime(startDateValue, startTimeValue);
         const endTime = countTime(endDateValue, endTimeValue);
         const startHoursDifference = countHoursDifference(this.currentTime, startTime);
         const startEndHoursDifference = countHoursDifference(startTime, endTime);
         return (
-            startHoursDifference > minRentalLengthHours &&
+            startHoursDifference > minStartDifferenceHours &&
             startEndHoursDifference > minRentalLengthHours
         );
     }

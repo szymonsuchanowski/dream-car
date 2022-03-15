@@ -17,7 +17,7 @@ const Step3 = () => {
     return (
         <div>
             {renderFields()}
-            <Error />
+            <Error isCenter />
         </div>
     );
 };

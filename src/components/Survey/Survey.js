@@ -8,6 +8,7 @@ import formContext from '../../context/formContext';
 
 const Survey = () => {
     const [step, setStep] = useState(0);
+
     const {
         formState,
         errors,
@@ -19,6 +20,7 @@ const Survey = () => {
         dateErr,
         removeFieldError,
     } = useForm();
+
     const { Provider } = formContext;
 
     const showNextStep = () => setStep(step + 1);
@@ -43,28 +45,28 @@ const Survey = () => {
     };
 
     return (
-        <StyledSurvey>
-            <Title>rent a car</Title>
-            <Provider
-                value={{
-                    formState,
-                    handleChange,
-                    handleDropdownChange,
-                    handleCheckboxChange,
-                    errors,
-                    validateFieldOnBlur,
-                    dateErr,
-                    removeFieldError,
-                }}
-            >
+        <Provider
+            value={{
+                formState,
+                handleChange,
+                handleDropdownChange,
+                handleCheckboxChange,
+                errors,
+                validateFieldOnBlur,
+                dateErr,
+                removeFieldError,
+            }}
+        >
+            <StyledSurvey>
+                <Title>rent a car</Title>
                 <Content
                     step={step}
                     handleStepChange={handleStepChange}
                     handleSubmit={handleSubmit}
                 />
-            </Provider>
-            <ProgressBar step={step} />
-        </StyledSurvey>
+                <ProgressBar step={step} />
+            </StyledSurvey>
+        </Provider>
     );
 };
 

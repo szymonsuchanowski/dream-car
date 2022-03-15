@@ -1,5 +1,6 @@
 const rentalData = {
     minRentalLengthHours: 4,
+    minStartDifferenceHours: 2,
     priceList: {
         car: {
             A: {

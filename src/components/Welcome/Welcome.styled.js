@@ -1,8 +1,17 @@
 import styled from 'styled-components';
 
 const StyledWelcome = styled.div`
-    width: 100%;
-    color: black;
+    color: #5e5e5e;
+    text-align: center;
+
+    p {
+        margin-bottom: 1.5rem;
+    }
+
+    span {
+        color: #5b0eeb;
+        font-weight: 700;
+    }
 `;
 
 export default StyledWelcome;

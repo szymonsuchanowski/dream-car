@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import StyledDropdown from './Dropdown.styled';
 import DropdownLabel from './DropdownLabel';
-import DropdownBox from './DropdownBox';
 import DropdownHeader from './DropdownHeader';
 import DropdownList from './DropdownList';
 import Error from '../Error';
@@ -10,7 +9,9 @@ import formContext from '../../context/formContext';
 
 const Dropdown = ({ field: { name, label, items } }) => {
     const { open, toggleDropdown } = useDropdown();
+
     const formHandler = useContext(formContext);
+
     const {
         [name]: { value: selectedValue },
     } = formHandler.formState;
@@ -26,7 +27,7 @@ const Dropdown = ({ field: { name, label, items } }) => {
         <>
             <StyledDropdown isOpen={open} isSelected={selectedValue !== ''}>
                 <DropdownLabel>{label}</DropdownLabel>
-                <DropdownBox>
+                <div>
                     <DropdownHeader toggleDropdown={toggleDropdown} isOpen={open}>
                         {setDropdownHeader()}
                     </DropdownHeader>
@@ -36,7 +37,7 @@ const Dropdown = ({ field: { name, label, items } }) => {
                         toggleDropdown={toggleDropdown}
                         isOpen={open}
                     />
-                </DropdownBox>
+                </div>
             </StyledDropdown>
             <Error>{formHandler.errors[name]}</Error>
         </>

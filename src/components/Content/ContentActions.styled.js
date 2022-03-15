@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 const twoBtnsStyles = css`
     justify-content: space-between;
+
     button,
     input {
         max-width: 120px;
@@ -10,13 +11,15 @@ const twoBtnsStyles = css`
 `;
 
 const StyledContentActions = styled.footer`
-    width: 100%;
     display: flex;
     justify-content: center;
+    width: 100%;
+
     button,
     input {
         width: 100%;
     }
+
     ${({ children }) => (children && children.length === 2 ? twoBtnsStyles : null)}
 `;
 

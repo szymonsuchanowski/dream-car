@@ -1,18 +1,25 @@
 import React, { useContext } from 'react';
-import DateInput from '../DateInput';
+import Input from '../Input';
 import Error from '../Error';
 import fields from '../../data/step2Data';
 import formContext from '../../context/formContext';
+import rentalData from '../../data/rentalData';
 
 const Step2 = () => {
     const formHandler = useContext(formContext);
 
-    const renderFields = () => fields.map((field) => <DateInput key={field.name} field={field} />);
+    const { minRentalLengthHours, minStartDifferenceHours } = rentalData;
+
+    const renderFields = () => fields.map((field) => <Input key={field.name} field={field} />);
 
     return (
         <div>
             {renderFields()}
-            <Error>{formHandler.dateErr ? 'verify the date range' : null}</Error>
+            <Error isCenter>
+                {formHandler.dateErr
+                    ? `verify date range (min. rental length ${minRentalLengthHours}h, rental start at least ${minStartDifferenceHours}h from now)`
+                    : null}
+            </Error>
         </div>
     );
 };

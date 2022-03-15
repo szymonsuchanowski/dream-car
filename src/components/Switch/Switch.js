@@ -6,9 +6,11 @@ import useSwitch from '../../hooks/useSwitch';
 
 const Switch = ({ field: { name, label, type } }) => {
     const formHandler = useContext(formContext);
+
     const {
         [name]: { value: isOnValue },
     } = formHandler.formState;
+
     const { isOn, toggleSwitch } = useSwitch(isOnValue);
 
     const handleChange = () => {

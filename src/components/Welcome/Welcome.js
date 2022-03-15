@@ -1,16 +1,18 @@
 import React from 'react';
-import welcomeData from '../../data/welcomeData';
-import Paragraph from '../Paragraph';
 import StyledWelcome from './Welcome.styled';
 
-const Welcome = () => {
-    const renderParagraphs = () =>
-        welcomeData.map((para) => {
-            const { txt, id } = para;
-            return <Paragraph key={id}>{txt}</Paragraph>;
-        });
-
-    return <StyledWelcome>{renderParagraphs()}</StyledWelcome>;
-};
+const Welcome = () => (
+    <StyledWelcome>
+        <p>
+            To receive a full quote, please <span>complete the inquiry form</span>.
+        </p>
+        <p>
+            You are <span>only 3 steps</span> away from booking your dream car.
+        </p>
+        <p>
+            Click the button below to <span>get started!</span>
+        </p>
+    </StyledWelcome>
+);
 
 export default Welcome;

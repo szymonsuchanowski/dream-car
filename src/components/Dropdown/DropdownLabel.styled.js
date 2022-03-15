@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledDropdownLabel = styled.p`
-    width: 30%;
+    font-size: 0.95rem;
 `;
 
 export default StyledDropdownLabel;

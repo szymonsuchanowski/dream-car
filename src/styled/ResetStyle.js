@@ -12,7 +12,7 @@ const ResetStyle = createGlobalStyle`
 
     body {
         background: #E4EBF5;
-        color: #6d5dfc;
+        color: #9baacf;
     }
 `;
 

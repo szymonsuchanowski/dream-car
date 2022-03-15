@@ -5,7 +5,11 @@ import { getStepsData } from '../../helpers/helpersFunctions';
 const ContentTitle = ({ step }) => {
     const contentTitle = getStepsData(step, 'title');
 
-    return <StyledContentTitle>{contentTitle}</StyledContentTitle>;
+    return (
+        <StyledContentTitle>
+            <h2>{contentTitle}</h2>
+        </StyledContentTitle>
+    );
 };
 
 export default ContentTitle;

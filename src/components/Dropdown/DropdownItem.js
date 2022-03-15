@@ -4,6 +4,7 @@ import formContext from '../../context/formContext';
 
 const DropdownItem = ({ toggleDropdown, item, name }) => {
     const formHandler = useContext(formContext);
+
     const { value, label } = item;
 
     const handleDropdownChoose = () => {
