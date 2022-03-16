@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
 
-const bgColor = 'linear-gradient(330deg, #5b0eeb 0%, #6d5dfc 50%, #8abdff 100%)';
-
 const themeSwitcherStyles = css`
     align-items: center;
     justify-content: flex-end;
@@ -12,19 +10,19 @@ const themeSwitcherStyles = css`
 `;
 
 const themeSwitcherLabelStyles = css`
-    background: #9baacf;
-    box-shadow: -4px 4px 15px inset rgba(0, 0, 0, 0.4);
+    background: var(--text-primary);
+    box-shadow: -4px 4px 15px inset var(--color-shadow-theme-switcher);
 
     ::before,
     ::after {
         font-size: 1.6rem;
         position: absolute;
         top: 50%;
-        transition: transform 0.3s ease-in-out;
+        transition: transform var(--transition-style);
     }
 
     ::before {
-        color: orange;
+        color: var(--color-switcher-icon-light);
         content: '\u263C';
         margin-right: 0.3rem;
         right: 100%;
@@ -32,7 +30,7 @@ const themeSwitcherLabelStyles = css`
     }
 
     ::after {
-        color: #9baacf;
+        color: var(--text-primary);
         content: '\u263E';
         left: 100%;
         margin-left: 0.3rem;
@@ -41,19 +39,19 @@ const themeSwitcherLabelStyles = css`
 `;
 
 const themeSwitcherSpanStyles = css`
-    background: #e4ebf5;
-    box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.4);
+    background: var(--bg-primary);
+    box-shadow: -3px 3px 8px var(--color-shadow-theme-switcher);
 `;
 
 const themeSwitcherCheckedStyles = css`
     input:checked + label {
         ::before {
-            color: #9baacf;
+            color: var(--text-primary);
             transform: translate3d(0, -50%, 0) scale(1);
         }
 
         ::after {
-            color: turquoise;
+            color: var(--color-switcher-icon-dark);
             transform: translate3d(0, -50%, 0) scale(1.2);
         }
     }
@@ -71,28 +69,29 @@ const StyledSwitcher = styled.div`
 
     label {
         align-items: center;
-        background: ${({ isOn }) => (isOn ? bgColor : 'rgba(255, 255, 255, 0)')};
+        background: ${({ isOn }) => (isOn ? 'var(--bg-switcher)' : 'transparent')};
         border-radius: 100px;
-        box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--color-shadow-primary),
+            -0.2rem -0.2rem 0.5rem var(--color-shadow-secondary);
         cursor: pointer;
         display: flex;
         height: 24px;
         justify-content: space-between;
         position: relative;
-        transition: background-color 0.3s ease-in-out;
+        transition: background-color var(--transition-style);
         width: 50px;
         ${({ name }) => name === 'themeSwitcher' && themeSwitcherLabelStyles}
     }
 
     span {
-        background: ${({ isOn }) => (isOn ? '#e4ebf5' : '#9baacf')};
+        background: ${({ isOn }) => (isOn ? 'var(--bg-primary)' : 'var(--text-primary)')};
         border-radius: 50%;
-        box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+        box-shadow: 0 0 2px 0 var(--color-shadow-switcher);
         height: 18px;
         left: 4px;
         position: absolute;
         top: 3px;
-        transition: 0.3s ease-in-out;
+        transition: var(--transition-style);
         width: 18px;
         ${({ name }) => name === 'themeSwitcher' && themeSwitcherSpanStyles}
     }

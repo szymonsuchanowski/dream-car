@@ -7,7 +7,7 @@ const StyledTitle = styled.header`
     text-align: center;
 
     h1 {
-        color: var(--colorPrimary);
+        color: var(--text-highlight);
         font-size: 2.4rem;
         letter-spacing: 0.2rem;
         margin: 0 0 1.5rem;

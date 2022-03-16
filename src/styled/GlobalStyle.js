@@ -2,12 +2,26 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     :root {
-        --colorPrimary: ${({ theme }) => theme.color};
+        --bg-primary: ${({ theme }) => theme.bgPrimary};
+        --bg-switcher: ${({ theme }) => theme.bgSwitcher};
+        --color-shadow-primary: ${({ theme }) => theme.shadowPrimary};
+        --color-shadow-secondary: ${({ theme }) => theme.shadowSecondary};
+        --color-shadow-switcher: ${({ theme }) => theme.switcherShadow};
+        --color-shadow-theme-switcher: ${({ theme }) => theme.themeSwitcherShadow};
+        --color-switcher-icon-dark: ${({ theme }) => theme.iconSwitcherActiveDark};
+        --color-switcher-icon-light: ${({ theme }) => theme.iconSwitcherActiveLight};
+        --text-error: ${({ theme }) => theme.textError};
+        --text-highlight: ${({ theme }) => theme.textHighlight};
+        --text-primary: ${({ theme }) => theme.textPrimary};
+        --text-user: ${({ theme }) => theme.textUser};
+        --radius-primary: 12px;
+        --radius-secondary: 8px;
+        --transition-style: 0.3s ease-in-out;
     }
 
     body {
-        background: #E4EBF5;
-        color: #9baacf;
+        background: var(--bg-primary);
+        color: var(--text-primary);
         font-family: 'Poppins', sans-serif;
     }
 

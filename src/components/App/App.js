@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { useToggle } from '../../hooks';
 import { ResetStyle, GlobalStyle, themeStyle } from '../../styled';
+import { useToggle } from '../../hooks';
 import Survey from '../Survey';
 import StyledApp from './App.styled';
 

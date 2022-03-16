@@ -1,36 +1,42 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const setColor = ({ isActive, isComplete }) => (isActive || isComplete ? '#5b0eeb' : '#5e5e5e');
+const shadow = css`
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--color-shadow-primary),
+        -0.2rem -0.2rem 0.5rem var(--color-shadow-secondary);
+`;
+
+const shadowInset = css`
+    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--color-shadow-primary),
+        inset -0.2rem -0.2rem 0.5rem var(--color-shadow-secondary);
+`;
 
 const StyledProgressBarItem = styled.li`
     align-items: center;
-    background: #e4ebf5;
+    background: var(--bg-primary);
     border-radius: 50%;
     border: none;
-    box-shadow: ${({ isComplete }) =>
-        isComplete
-            ? 'inset 0.2rem 0.2rem 0.5rem #c8d0e7, inset -0.2rem -0.2rem 0.5rem #ffffff'
-            : '0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff'};
-    color: ${setColor};
+    color: ${({ isActive, isComplete }) =>
+        isActive || isComplete ? 'var(--text-highlight)' : 'var(--text-user)'};
     display: flex;
     font-size: ${({ isComplete }) => (isComplete ? '1.4rem' : '1rem')};
     font-weight: ${({ isActive }) => (isActive ? '700' : '400')};
     height: 40px;
     justify-content: center;
     transform: ${({ isActive }) => (isActive ? 'scale(1.1)' : null)};
-    transition: transform 0.3s ease-in-out;
+    transition: transform var(--transition-style);
     width: 40px;
+    ${({ isComplete }) => (isComplete ? shadowInset : shadow)};
 
     :after {
-        color: ${({ isActive }) => (isActive ? '#5b0eeb' : '#5e5e5e')};
+        color: ${({ isActive }) => (isActive ? 'var(--text-highlight)' : 'var(--text-user)')};
         content: '${({ txt }) => txt}';
         filter: ${({ isComplete }) => (isComplete ? 'blur(1.5px)' : 'none')};
         font-size: 1rem;
-        font-weight: ${({ isActive }) => (isActive ? 'bold' : 'normal')};
+        font-weight: ${({ isActive }) => (isActive ? '700' : '400')};
         position: absolute;
         text-align: center;
         top: 45px;
-        transition: filter 0.3s ease-in-out;
+        transition: filter var(--transition-style);
     }
 `;
 

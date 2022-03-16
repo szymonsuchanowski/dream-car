@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StyledError = styled.div`
     align-items: flex-start;
-    color: #cc0000;
+    color: var(--text-error);
     display: flex;
     font-size: ${({ isCenter }) => (isCenter ? '0.75rem' : '0.85rem')};
     font-weight: 300;

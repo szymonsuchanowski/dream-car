@@ -10,10 +10,11 @@ const StyledInput = styled.div`
 
     input {
         background: transparent;
-        border-radius: 12px;
+        border-radius: var(--radius-primary);
         border: none;
-        box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7, inset -0.2rem -0.2rem 0.5rem #ffffff;
-        color: #5e5e5e;
+        box-shadow: inset 0.2rem 0.2rem 0.5rem var(--color-shadow-primary),
+            inset -0.2rem -0.2rem 0.5rem var(--color-shadow-secondary);
+        color: var(--text-user);
         height: 40px;
         letter-spacing: 0.1rem;
         outline: 1px solid transparent;
@@ -22,7 +23,8 @@ const StyledInput = styled.div`
 
         :focus,
         :valid {
-            box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
+            box-shadow: 0.3rem 0.3rem 0.6rem var(--color-shadow-primary),
+                -0.2rem -0.2rem 0.5rem var(--color-shadow-secondary);
         }
 
         :focus ~ label,
@@ -53,13 +55,14 @@ const StyledInput = styled.div`
         padding: 10px;
         position: absolute;
         top: 1px;
-        transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+        transition: transform var(--transition-style), font-size var(--transition-style);
     }
 
     p {
         align-items: center;
-        border-radius: 12px;
-        box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7, inset -0.2rem -0.2rem 0.5rem #ffffff;
+        border-radius: var(--radius-primary);
+        box-shadow: inset 0.2rem 0.2rem 0.5rem var(--color-shadow-primary),
+            inset -0.2rem -0.2rem 0.5rem var(--color-shadow-secondary);
         display: flex;
         font-size: 0.95rem;
         height: 40px;

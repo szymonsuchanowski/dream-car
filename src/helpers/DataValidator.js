@@ -39,7 +39,7 @@ export default class DataValidator {
 
     startTime = {
         regExp: /^((0[8-9]|1[0-9]):[0-5][0-9])$|^(20:00)$/,
-        err: 'work hours 08:00 - 20:00',
+        err: 'working hours 08:00 - 20:00',
         required: true,
     };
 
@@ -51,7 +51,7 @@ export default class DataValidator {
 
     endTime = {
         regExp: /^((0[8-9]|1[0-9]):[0-5][0-9])$|^(20:00)$/,
-        err: 'work hours 08:00 - 20:00',
+        err: 'working hours 08:00 - 20:00',
         required: true,
     };
 

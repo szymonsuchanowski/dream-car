@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledWelcome = styled.div`
-    color: #5e5e5e;
+    color: var(--text-user);
     text-align: center;
 
     p {
@@ -9,7 +9,7 @@ const StyledWelcome = styled.div`
     }
 
     span {
-        color: #5b0eeb;
+        color: var(--text-highlight);
         font-weight: 700;
     }
 `;

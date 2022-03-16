@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 const StyledContent = styled.form`
     align-items: center;
-    border-radius: 12px;
-    box-shadow: 0.8rem 0.8rem 1.4rem #c8d0e7, -0.2rem -0.2rem 1.8rem #ffffff;
+    border-radius: var(--radius-primary);
+    box-shadow: 0.8rem 0.8rem 1.4rem var(--color-shadow-primary),
+        -0.2rem -0.2rem 1.8rem var(--color-shadow-secondary);
     display: flex;
     flex-direction: column;
     justify-content: space-between;

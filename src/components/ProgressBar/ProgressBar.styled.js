@@ -5,13 +5,12 @@ const StyledProgressBar = styled.footer`
     max-width: 700px;
     opacity: 1;
     transform: translateX(0);
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity var(--transition-style);
     width: 90%;
 
     ul {
         display: flex;
         justify-content: space-between;
-        list-style: none;
         margin: 2rem auto 1.5rem;
         position: relative;
         width: 90%;
@@ -26,13 +25,13 @@ const StyledProgressBar = styled.footer`
         }
 
         ::before {
-            background: #9baacf;
+            background: var(--text-primary);
             width: 100%;
         }
 
         ::after {
-            background: #5b0eeb;
-            transition: width 0.3s ease-in-out;
+            background: var(--text-highlight);
+            transition: width var(--transition-style);
             width: ${({ progress }) => progress}%;
         }
     }

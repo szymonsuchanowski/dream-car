@@ -7,8 +7,8 @@ const openListStyles = css`
 `;
 
 const StyledDropdownList = styled.ul`
-    background: #e4ebf5;
-    border-radius: 8px;
+    background: var(--bg-primary);
+    border-radius: var(--radius-secondary);
     display: flex;
     flex-direction: column;
     gap: 3px;
@@ -18,7 +18,8 @@ const StyledDropdownList = styled.ul`
     position: absolute;
     top: 43px;
     transform: scaleY(0);
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, margin-top 0.3s ease-in-out;
+    transition: opacity var(--transition-style), transform var(--transition-style),
+        margin-top var(--transition-style);
     width: 100%;
     z-index: ${({ order }) => order};
     ${({ isOpen }) => isOpen && openListStyles}

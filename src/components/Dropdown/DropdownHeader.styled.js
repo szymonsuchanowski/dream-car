@@ -12,7 +12,7 @@ const crossStylesAfter = css`
 
 const StyledDropdownHeader = styled.p`
     align-items: center;
-    color: #5e5e5e;
+    color: var(--text-user);
     cursor: pointer;
     display: flex;
     justify-content: flex-end;
@@ -23,7 +23,7 @@ const StyledDropdownHeader = styled.p`
 
     ::before,
     ::after {
-        background-color: #5e5e5e;
+        background-color: var(--text-user);
         content: '';
         display: inline-block;
         height: 1.5px;
@@ -31,7 +31,7 @@ const StyledDropdownHeader = styled.p`
         right: 2px;
         top: 50%;
         transform: translateY(-50%);
-        transition: transform 0.3s ease-in-out;
+        transition: transform var(--transition-style);
         width: 8px;
     }
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledSummary = styled.div`
-    color: #5e5e5e;
+    color: var(--text-user);
     font-size: 0.9rem;
     text-align: center;
 
@@ -10,7 +10,7 @@ const StyledSummary = styled.div`
     }
 
     > p > span {
-        color: #5b0eeb;
+        color: var(--text-highlight);
         font-weight: 700;
     }
 

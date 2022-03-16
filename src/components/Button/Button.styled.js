@@ -1,24 +1,26 @@
 import styled, { css } from 'styled-components';
 
 const buttonStyles = css`
-    background: #e4ebf5;
-    border-radius: 12px;
+    background: var(--bg-primary);
+    border-radius: var(--radius-primary);
     border: none;
-    box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
-    color: #9baacf;
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--color-shadow-primary),
+        -0.2rem -0.2rem 0.5rem var(--color-shadow-secondary);
+    color: var(--text-primary);
     cursor: pointer;
     font-weight: 700;
     letter-spacing: 0.1rem;
     padding: 0.75rem 0;
-    transition: color 0.3s ease-in-out;
+    transition: color var(--transition-style);
 
     :active {
-        box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7, inset -0.2rem -0.2rem 0.5rem #ffffff;
+        box-shadow: inset 0.2rem 0.2rem 0.5rem var(--color-shadow-primary),
+            inset -0.2rem -0.2rem 0.5rem var(--color-shadow-secondary);
     }
 
     @media screen and (min-width: 960px) {
         :hover {
-            color: #5b0eeb;
+            color: var(--text-highlight);
         }
     }
 `;
