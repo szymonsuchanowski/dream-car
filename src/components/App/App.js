@@ -1,9 +1,9 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { useToggle } from '../../hooks';
+import { ResetStyle, GlobalStyle, themeStyle } from '../../styled';
 import Survey from '../Survey';
 import StyledApp from './App.styled';
-import { ResetStyle, GlobalStyle, themeStyle } from '../../styled';
-import useToggle from '../../hooks/useToggle';
 
 const App = () => {
     const [isDarkMode, toggleTheme] = useToggle();
@@ -14,7 +14,7 @@ const App = () => {
             <ThemeProvider theme={isDarkMode ? themeStyle.dark : themeStyle.light}>
                 <GlobalStyle />
                 <StyledApp>
-                    <Survey toggleTheme={toggleTheme} />
+                    <Survey toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
                 </StyledApp>
             </ThemeProvider>
         </>

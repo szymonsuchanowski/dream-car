@@ -1,8 +1,8 @@
 import React from 'react';
-import Dropdown from '../Dropdown';
-import Switch from '../Switch';
-import Error from '../Error';
 import fields from '../../data/step3Data';
+import Dropdown from '../Dropdown';
+import CheckboxBox from '../CheckboxBox';
+import Error from '../Error';
 
 const Step3 = () => {
     const renderFields = () =>
@@ -10,7 +10,7 @@ const Step3 = () => {
             field.type === 'dropdown' ? (
                 <Dropdown key={field.name} field={field} />
             ) : (
-                <Switch key={field.name} field={field} />
+                <CheckboxBox key={field.name} field={field} />
             ),
         );
 

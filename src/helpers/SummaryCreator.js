@@ -1,6 +1,3 @@
-import formFieldsStep1 from '../data/step1Data';
-import formFieldsStep2 from '../data/step2Data';
-import formFieldsStep3 from '../data/step3Data';
 import {
     convertArrToObj,
     countHoursDifference,
@@ -9,6 +6,9 @@ import {
     prepareSummaryItemsList,
 } from './helpersFunctions';
 import rentalData from '../data/rentalData';
+import formFieldsStep1 from '../data/step1Data';
+import formFieldsStep2 from '../data/step2Data';
+import formFieldsStep3 from '../data/step3Data';
 
 const SummaryCreator = (dataToFilter) => {
     const getEnteredValues = () => {
@@ -85,7 +85,6 @@ const SummaryCreator = (dataToFilter) => {
             carWashInfo,
             totalPrice,
         });
-        console.log(summaryItemsList);
         return { name, email, summaryItemsList };
     };
 

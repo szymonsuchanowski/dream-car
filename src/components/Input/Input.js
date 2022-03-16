@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import StyledInput from './Input.styled';
-import Error from '../Error';
 import formContext from '../../context/formContext';
 import { isDateFieldDisabled, setDateRange } from '../../helpers/helpersFunctions';
+import StyledInput from './Input.styled';
+import Error from '../Error';
 
 const Input = (props) => {
     const formHandler = useContext(formContext);

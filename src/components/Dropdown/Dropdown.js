@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
+import { useToggle } from '../../hooks';
+import formContext from '../../context/formContext';
 import StyledDropdown from './Dropdown.styled';
 import DropdownLabel from './DropdownLabel';
 import DropdownHeader from './DropdownHeader';
 import DropdownList from './DropdownList';
 import Error from '../Error';
-import useToggle from '../../hooks/useToggle';
-import formContext from '../../context/formContext';
 
 const Dropdown = ({ field: { name, label, items, order } }) => {
     const [isOpen, toggleDropdown] = useToggle();

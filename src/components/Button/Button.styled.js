@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const StyledButton = styled.button`
+const buttonStyles = css`
     background: #e4ebf5;
     border-radius: 12px;
     border: none;
@@ -23,4 +23,8 @@ const StyledButton = styled.button`
     }
 `;
 
-export default StyledButton;
+const StyledButton = styled.button(buttonStyles);
+
+const StyledSubmitButton = styled.input(buttonStyles);
+
+export { StyledButton, StyledSubmitButton };

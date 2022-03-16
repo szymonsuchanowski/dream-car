@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
+import { useForm } from '../../hooks';
+import formContext from '../../context/formContext';
 import StyledSurvey from './Survey.styled';
-import ThemeSwitcher from '../ThemeSwitcher';
+import Switcher from '../Switcher';
 import Title from '../Title';
 import Content from '../Content';
 import ProgressBar from '../ProgressBar';
-import useForm from '../../hooks/useForm';
-import formContext from '../../context/formContext';
 
-const Survey = ({ toggleTheme }) => {
+const Survey = ({ toggleTheme, isDarkMode }) => {
     const [step, setStep] = useState(0);
 
     const {
@@ -59,8 +59,10 @@ const Survey = ({ toggleTheme }) => {
             }}
         >
             <StyledSurvey>
-                <ThemeSwitcher toggleTheme={toggleTheme} />
-                <Title>rent a car</Title>
+                <Switcher name="themeSwitcher" isOn={isDarkMode} handleChange={toggleTheme} />
+                <Title>
+                    <h1>rent a car</h1>
+                </Title>
                 <Content
                     step={step}
                     handleStepChange={handleStepChange}

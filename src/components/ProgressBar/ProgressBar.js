@@ -1,7 +1,7 @@
 import React from 'react';
+import stepsData from '../../data/stepsData';
 import StyledProgressBar from './ProgressBar.styled';
 import ProgressBarItem from './ProgressBarItem';
-import stepsData from '../../data/stepsData';
 
 const ProgressBar = ({ step }) => {
     const progress = (100 / (stepsData.length - 2)) * (step - 1);

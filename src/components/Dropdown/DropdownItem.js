@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import StyledDropdownItem from './DropdownItem.styled';
 import formContext from '../../context/formContext';
+import StyledDropdownItem from './DropdownItem.styled';
 
 const DropdownItem = ({ toggleDropdown, item, name }) => {
     const formHandler = useContext(formContext);

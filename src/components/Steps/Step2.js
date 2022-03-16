@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
+import formContext from '../../context/formContext';
+import fields from '../../data/step2Data';
+import rentalData from '../../data/rentalData';
 import Input from '../Input';
 import Error from '../Error';
-import fields from '../../data/step2Data';
-import formContext from '../../context/formContext';
-import rentalData from '../../data/rentalData';
 
 const Step2 = () => {
     const formHandler = useContext(formContext);

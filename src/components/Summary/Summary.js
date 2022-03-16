@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
+import formContext from '../../context/formContext';
+import SummaryCreator from '../../helpers/SummaryCreator';
 import SummaryItem from './SummaryItem';
 import StyledSummary from './Summary.styled';
-import SummaryCreator from '../../helpers/SummaryCreator';
-import formContext from '../../context/formContext';
 
 const Summary = () => {
     const formHandler = useContext(formContext);

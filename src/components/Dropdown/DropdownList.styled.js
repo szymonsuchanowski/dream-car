@@ -13,7 +13,6 @@ const StyledDropdownList = styled.ul`
     flex-direction: column;
     gap: 3px;
     left: 0;
-    list-style: none;
     margin-top: -45%;
     opacity: 0;
     position: absolute;
