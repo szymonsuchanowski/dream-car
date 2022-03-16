@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
-const bgColor = 'linear-gradient(330deg, #5b0eeb 0%, #6d5dfc 50%, #8abdff 100%)';
-
 const StyledThemeSwitcher = styled.div`
+    align-items: center;
     display: flex;
+    justify-content: flex-end;
+    max-width: 600px;
+    padding-bottom: 1.5rem;
+    padding-right: 25px;
+    width: 90%;
 
     input {
         height: 0;
@@ -13,9 +17,9 @@ const StyledThemeSwitcher = styled.div`
 
     label {
         align-items: center;
-        background: ${(props) => (props.isOn ? bgColor : 'rgba(255, 255, 255, 0)')};
+        background: #9baacf;
         border-radius: 100px;
-        box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff;
+        box-shadow: -4px 4px 15px inset rgba(0, 0, 0, 0.4);
         cursor: pointer;
         display: flex;
         height: 24px;
@@ -23,40 +27,55 @@ const StyledThemeSwitcher = styled.div`
         position: relative;
         transition: background-color 0.3s ease-in-out;
         width: 50px;
+
         ::before,
         ::after {
-            font-size: 2rem;
+            font-size: 1.6rem;
             position: absolute;
-            transform: translate3d(0, -50%, 0);
             top: 50%;
+            transition: transform 0.3s ease-in-out;
         }
 
         ::before {
-            content: '\u263C';
-            right: 100%;
-            margin-right: 10px;
             color: orange;
+            content: '\u263C';
+            margin-right: 0.3rem;
+            right: 100%;
+            transform: translate3d(0, -50%, 0) scale(1.2);
         }
 
         ::after {
+            color: #9baacf;
             content: '\u263E';
             left: 100%;
-            margin-left: 10px;
-            color: red;
+            margin-left: 0.3rem;
+            transform: translate3d(0, -50%, 0);
         }
     }
 
     span {
-        background: ${({ isOn }) => (isOn ? '#e4ebf5' : '#9baacf')};
-        border-radius: 45px;
-        box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+        background: #e4ebf5;
+        border-radius: 50%;
+        box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.4);
         content: '';
         height: 18px;
         left: 4px;
         position: absolute;
         top: 3px;
-        transition: 0.2s ease-in-out;
+        transition: 0.3s ease-in-out;
         width: 18px;
+    }
+
+    input:checked + label {
+        ::before {
+            color: #9baacf;
+            transform: translate3d(0, -50%, 0) scale(1);
+        }
+
+        ::after {
+            color: turquoise;
+            transform: translate3d(0, -50%, 0) scale(1.2);
+        }
     }
 
     input:checked + label span {
