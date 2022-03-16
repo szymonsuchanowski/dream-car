@@ -4,10 +4,10 @@ const StyledTitle = styled.header`
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 
     h1 {
-        color: #5b0eeb;
+        color: var(--colorPrimary);
         font-size: 2.4rem;
         letter-spacing: 0.2rem;
         margin: 0;

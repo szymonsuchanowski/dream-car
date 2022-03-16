@@ -21,7 +21,7 @@ const StyledDropdownList = styled.ul`
     transform: scaleY(0);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, margin-top 0.3s ease-in-out;
     width: 100%;
-    z-index: 1;
+    z-index: ${({ order }) => order};
     ${({ isOpen }) => isOpen && openListStyles}
 
     @media screen and (min-width: 400px) {

@@ -7,7 +7,7 @@ import Error from '../Error';
 import useToggle from '../../hooks/useToggle';
 import formContext from '../../context/formContext';
 
-const Dropdown = ({ field: { name, label, items } }) => {
+const Dropdown = ({ field: { name, label, items, order } }) => {
     const [isOpen, toggleDropdown] = useToggle();
 
     const formHandler = useContext(formContext);
@@ -36,6 +36,7 @@ const Dropdown = ({ field: { name, label, items } }) => {
                         items={items}
                         toggleDropdown={toggleDropdown}
                         isOpen={isOpen}
+                        order={order}
                     />
                 </div>
             </StyledDropdown>

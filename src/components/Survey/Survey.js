@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import StyledSurvey from './Survey.styled';
+import ThemeSwitcher from '../ThemeSwitcher';
 import Title from '../Title';
 import Content from '../Content';
 import ProgressBar from '../ProgressBar';
 import useForm from '../../hooks/useForm';
 import formContext from '../../context/formContext';
 
-const Survey = () => {
+const Survey = ({ toggleTheme }) => {
     const [step, setStep] = useState(0);
 
     const {
@@ -58,6 +59,7 @@ const Survey = () => {
             }}
         >
             <StyledSurvey>
+                <ThemeSwitcher toggleTheme={toggleTheme} />
                 <Title>rent a car</Title>
                 <Content
                     step={step}

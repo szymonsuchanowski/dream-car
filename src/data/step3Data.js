@@ -10,6 +10,7 @@ const formFieldsStep3 = [
             { value: 'D', label: 'D (e.g. VW Passat)' },
             { value: 'P', label: 'P (e.g. Audi A8)' },
         ],
+        order: 2,
     },
     {
         name: 'childSeat',
@@ -22,6 +23,7 @@ const formFieldsStep3 = [
             { value: 3, label: 'three (3)' },
             { value: 4, label: 'four (4)' },
         ],
+        order: 1,
     },
     {
         name: 'gps',
