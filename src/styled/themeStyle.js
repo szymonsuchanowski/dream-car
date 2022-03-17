@@ -24,7 +24,7 @@ const themeStyle = {
         shadowPrimary: '#131313',
         shadowSecondary: '#232323',
         switcherShadow: 'rgba(10, 10, 10, 0.29)',
-        textError: '#8b1b1b',
+        textError: '#912626',
         textHighlight: '#287c9b',
         textPrimary: '#545e77',
         textUser: '#5e5e5e',
