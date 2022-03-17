@@ -10,7 +10,7 @@ const StyledDropdownItem = styled.li`
     height: 40px;
     justify-content: flex-end;
     padding-right: 25px;
-    transition: color var(--transition-style);
+    transition: color var(--transition-style), box-shadow var(--transition-style);
 
     @media screen and (min-width: 960px) {
         :hover {

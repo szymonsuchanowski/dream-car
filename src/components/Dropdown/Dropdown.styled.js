@@ -18,6 +18,7 @@ const StyledDropdown = styled.div`
     justify-content: space-between;
     padding: 10px;
     position: relative;
+    transition: box-shadow var(--transition-style);
     width: 100%;
     ${({ isOpen, isSelected }) => (isOpen || isSelected ? shadow : shadowInset)};
 

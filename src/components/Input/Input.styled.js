@@ -20,6 +20,7 @@ const StyledInput = styled.div`
         outline: 1px solid transparent;
         padding: 10px;
         width: 100%;
+        transition: box-shadow var(--transition-style);
 
         :focus,
         :valid {
@@ -69,6 +70,7 @@ const StyledInput = styled.div`
         justify-content: flex-start;
         letter-spacing: 1px;
         padding: 10px;
+        transition: box-shadow var(--transition-style);
     }
 `;
 

@@ -11,6 +11,7 @@ const StyledContent = styled.form`
     max-width: 600px;
     min-height: 540px;
     padding: 1.5rem;
+    transition: box-shadow var(--transition-style);
     width: 90%;
 
     > div {

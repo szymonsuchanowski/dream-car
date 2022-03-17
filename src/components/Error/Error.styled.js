@@ -11,6 +11,7 @@ const StyledError = styled.div`
     margin-top: ${({ isCenter }) => (isCenter ? '-1rem' : 0)};
     padding: 5px 10px;
     text-align: center;
+    transition: color var(--transition-style);
 `;
 
 export default StyledError;

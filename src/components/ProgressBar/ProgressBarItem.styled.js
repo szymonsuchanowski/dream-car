@@ -23,7 +23,8 @@ const StyledProgressBarItem = styled.li`
     height: 40px;
     justify-content: center;
     transform: ${({ isActive }) => (isActive ? 'scale(1.1)' : null)};
-    transition: transform var(--transition-style);
+    transition: transform var(--transition-style), background-color var(--transition-style),
+        box-shadow var(--transition-style);
     width: 40px;
     ${({ isComplete }) => (isComplete ? shadowInset : shadow)};
 
@@ -36,7 +37,7 @@ const StyledProgressBarItem = styled.li`
         position: absolute;
         text-align: center;
         top: 45px;
-        transition: filter var(--transition-style);
+        transition: filter var(--transition-style), color var(--transition-style);
     }
 `;
 

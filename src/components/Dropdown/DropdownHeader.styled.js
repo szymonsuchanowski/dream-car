@@ -19,6 +19,7 @@ const StyledDropdownHeader = styled.p`
     padding-right: 15px;
     position: relative;
     text-align: center;
+    transition: color var(--transition-style);
     width: 100%;
 
     ::before,
@@ -31,7 +32,7 @@ const StyledDropdownHeader = styled.p`
         right: 2px;
         top: 50%;
         transform: translateY(-50%);
-        transition: transform var(--transition-style);
+        transition: transform var(--transition-style), background-color var(--transition-style);
         width: 8px;
     }
 

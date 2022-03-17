@@ -19,7 +19,7 @@ const StyledDropdownList = styled.ul`
     top: 43px;
     transform: scaleY(0);
     transition: opacity var(--transition-style), transform var(--transition-style),
-        margin-top var(--transition-style);
+        margin-top var(--transition-style), background-color var(--transition-style);
     width: 100%;
     z-index: ${({ order }) => order};
     ${({ isOpen }) => isOpen && openListStyles}

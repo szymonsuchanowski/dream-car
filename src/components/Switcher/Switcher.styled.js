@@ -4,7 +4,7 @@ const themeSwitcherStyles = css`
     align-items: center;
     justify-content: flex-end;
     max-width: 600px;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
     padding-right: 25px;
     width: 90%;
 `;
@@ -18,7 +18,7 @@ const themeSwitcherLabelStyles = css`
         font-size: 1.6rem;
         position: absolute;
         top: 50%;
-        transition: transform var(--transition-style);
+        transition: transform var(--transition-style), color var(--transition-style);
     }
 
     ::before {
@@ -78,7 +78,7 @@ const StyledSwitcher = styled.div`
         height: 24px;
         justify-content: space-between;
         position: relative;
-        transition: background-color var(--transition-style);
+        transition: background-color var(--transition-style), box-shadow var(--transition-style);
         width: 50px;
         ${({ name }) => name === 'themeSwitcher' && themeSwitcherLabelStyles}
     }

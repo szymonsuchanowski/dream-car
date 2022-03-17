@@ -8,6 +8,11 @@ const StyledSummaryItem = styled.li`
     display: flex;
     justify-content: space-between;
     padding: 0.5rem;
+    transition: box-shadow var(--transition-style);
+
+    span {
+        transition: color var(--transition-style);
+    }
 
     span:first-child {
         color: ${({ isColor }) => (isColor ? 'var(--text-highlight)' : 'var(--text-primary)')};

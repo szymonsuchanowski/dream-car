@@ -19,6 +19,7 @@ const StyledCheckboxBox = styled.div`
     justify-content: space-between;
     margin-top: 1.5rem;
     padding: 10px;
+    transition: box-shadow var(--transition-style);
     width: 100%;
     ${({ isOn }) => (isOn ? shadow : shadowInset)};
 

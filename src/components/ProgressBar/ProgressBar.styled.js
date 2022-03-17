@@ -26,12 +26,13 @@ const StyledProgressBar = styled.footer`
 
         ::before {
             background: var(--text-primary);
+            transition: background-color var(--transition-style);
             width: 100%;
         }
 
         ::after {
             background: var(--text-highlight);
-            transition: width var(--transition-style);
+            transition: width var(--transition-style), background-color var(--transition-style);
             width: ${({ progress }) => progress}%;
         }
     }

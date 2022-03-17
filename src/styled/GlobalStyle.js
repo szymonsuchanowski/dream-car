@@ -10,12 +10,13 @@ const GlobalStyle = createGlobalStyle`
         --color-shadow-theme-switcher: ${({ theme }) => theme.themeSwitcherShadow};
         --color-switcher-icon-dark: ${({ theme }) => theme.iconSwitcherActiveDark};
         --color-switcher-icon-light: ${({ theme }) => theme.iconSwitcherActiveLight};
+        --radius-primary: 12px;
+        --radius-secondary: 8px;
         --text-error: ${({ theme }) => theme.textError};
         --text-highlight: ${({ theme }) => theme.textHighlight};
         --text-primary: ${({ theme }) => theme.textPrimary};
         --text-user: ${({ theme }) => theme.textUser};
-        --radius-primary: 12px;
-        --radius-secondary: 8px;
+        --title-shadow: ${({ theme }) => theme.titleShadow};
         --transition-style: 0.3s ease-in-out;
     }
 
@@ -23,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
         background: var(--bg-primary);
         color: var(--text-primary);
         font-family: 'Poppins', sans-serif;
+        transition: background-color var(--transition-style);
     }
 
     ul {

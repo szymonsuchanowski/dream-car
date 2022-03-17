@@ -11,7 +11,8 @@ const buttonStyles = css`
     font-weight: 700;
     letter-spacing: 0.1rem;
     padding: 0.75rem 0;
-    transition: color var(--transition-style);
+    transition: color var(--transition-style), background-color var(--transition-style),
+        box-shadow var(--transition-style);
 
     :active {
         box-shadow: inset 0.2rem 0.2rem 0.5rem var(--color-shadow-primary),
