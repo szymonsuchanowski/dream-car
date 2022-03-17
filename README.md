@@ -129,7 +129,7 @@ const rentalData = {
     ```javascript
         const [isOpen, toggleDropdown] = useToggle();
     ```
-- Kanban Board App styling
+- Multi Step Form styling
     - **RWD**
     - styles created using **Styled Components**
     - custom `<Switcher />` (checkbox) and `<Dropdown />` (similiar to `<select>` HTML element)
