@@ -7,7 +7,6 @@ const buttonStyles = css`
     box-shadow: 0.3rem 0.3rem 0.6rem var(--color-shadow-primary),
         -0.2rem -0.2rem 0.5rem var(--color-shadow-secondary);
     color: var(--text-primary);
-    cursor: pointer;
     font-weight: 700;
     letter-spacing: 0.1rem;
     padding: 0.75rem 0;

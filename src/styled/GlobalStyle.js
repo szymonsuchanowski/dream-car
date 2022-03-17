@@ -27,6 +27,11 @@ const GlobalStyle = createGlobalStyle`
         transition: background-color var(--transition-style);
     }
 
+    button,
+    input[type="submit"] {
+        cursor: pointer;
+    }
+
     ul {
         list-style: none;
     }

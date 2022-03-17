@@ -21,7 +21,7 @@ export default class DataValidator {
 
     email = {
         regExp: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-        err: 'e-mail address required',
+        err: 'valid e-mail address required',
         required: true,
     };
 
@@ -33,7 +33,7 @@ export default class DataValidator {
 
     startDate = {
         regExp: /^20\d{2}[-/.](0[1-9]|1[0-2])[-/.](0[1-9]|[12]\d|3[01])$/,
-        err: 'today or future',
+        err: 'required - today/future',
         required: true,
     };
 
@@ -45,7 +45,7 @@ export default class DataValidator {
 
     endDate = {
         regExp: /^2022[-/.](0[1-9]|1[0-2])[-/.](0[1-9]|[12]\d|3[01])$/,
-        err: 'today or future',
+        err: 'required - today/future',
         required: true,
     };
 
@@ -57,7 +57,7 @@ export default class DataValidator {
 
     car = {
         regExp: /^[a-zA-Z]$/,
-        err: 'select car class',
+        err: 'car class required',
         required: true,
     };
 
