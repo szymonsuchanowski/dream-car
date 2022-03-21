@@ -8,7 +8,7 @@ const StyledError = styled.div`
     font-weight: 300;
     height: 2rem;
     justify-content: ${({ isCenter }) => (isCenter ? 'center' : 'flex-start')};
-    margin-top: ${({ isCenter }) => (isCenter ? '-1rem' : 0)};
+    margin-top: ${({ isCenter }) => (isCenter ? '-0.5rem' : 0)};
     padding: 5px 10px;
     text-align: center;
     transition: color var(--transition-style);
