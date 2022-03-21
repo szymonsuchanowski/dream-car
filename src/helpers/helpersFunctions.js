@@ -49,7 +49,10 @@ export const isDateFieldDisabled = (name, formState) => {
     return false;
 };
 
-export const countTime = (date, time) => new Date(`${date} ${time}`).getTime();
+export const countTime = (date, time) => {
+    const [year, month, day] = date.split('-');
+    return new Date(`${month}/${day}/${year} ${time}:00`).getTime();
+};
 
 export const countHoursDifference = (time1, time2) => (time2 - time1) / (60 * 60 * 1000);
 

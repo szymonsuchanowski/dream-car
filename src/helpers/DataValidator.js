@@ -83,8 +83,8 @@ export default class DataValidator {
         const startHoursDifference = countHoursDifference(this.currentTime, startTime);
         const startEndHoursDifference = countHoursDifference(startTime, endTime);
         return (
-            startHoursDifference > minStartDifferenceHours &&
-            startEndHoursDifference > minRentalLengthHours
+            startHoursDifference >= minStartDifferenceHours &&
+            startEndHoursDifference >= minRentalLengthHours
         );
     }
 

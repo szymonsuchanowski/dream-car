@@ -107,6 +107,9 @@ function useForm() {
     };
 
     const validateStepData = (step) => {
+        if (step === 1) {
+            return true;
+        }
         const stepFields = stepsData[step];
         const fieldNamesList = getInputsNames(stepFields);
         const errorsObj = findStepErrors(fieldNamesList);

@@ -37,6 +37,8 @@ const StyledInput = styled.div`
 
     input[type='time'],
     input[type='date'] {
+        display: flex;
+        justify-content: flex-end;
         text-align: right;
     }
 
