@@ -159,7 +159,7 @@ const rentalData = {
 Coded by **Szymon Suchanowski**.
 
 Feel free to contact me:
-- [LinkedIn](https://github.com/szymonsuchanowski)
+- [LinkedIn](https://www.linkedin.com/in/suchanowski/)
 - [GitHub](https://github.com/szymonsuchanowski)
 
 
